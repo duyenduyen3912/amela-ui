@@ -1,0 +1,73 @@
+.wrapper{
+    cursor: pointer;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    border-radius: 6px;
+    &:hover{
+        background-color: #e7e7e7;
+        transition:  background-color ease 0.3s;
+    }
+    box-sizing: border-box;
+}
+
+.img{
+    width: 28px;
+}
+
+.avatar{
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatarContact{
+    position: relative;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.friendContactWrapper > div:first-child{
+    position: relative;
+}
+.friendContactWrapper > div:first-child:after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+    border-style: solid;
+    border-color: var(--active);
+    border-width: 3px 3px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px white;
+}
+
+.group{
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.name{
+    box-sizing: border-box;
+    padding: 8px 10px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.iconWrap{
+    border-radius: 50%;
+    padding: 4px 8px;
+    background-color: #e7e7e7;
+}
+
+.icon{
+    font-size: 12px;
+    font-weight: 700
+}

@@ -1,0 +1,54 @@
+.wrapper{
+    cursor: pointer;
+    width: 140px;
+    height: 100%;
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    overflow: hidden;
+    &:hover{
+        background-size: auto 110%;
+        transition: background-size ease 0.3s;
+    }
+    &:not(:hover){
+        background-size: auto 100%;
+        transition: background-size ease 0.3s;
+    }
+}
+
+.storyWrap{
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.1);
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.2)
+    }
+}
+
+.overlay{
+    opacity: 0.7;
+}
+
+.avatarWrap{
+    
+}
+
+.avatar{
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary);
+}
+
+.name{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
