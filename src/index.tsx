@@ -5,8 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import 'antd/dist/antd.css';
 import 'assets/index.global.scss';
 import 'i18n/i18n';
-import { ConfigProvider } from "antd";
-import locale from 'antd/lib/locale/vi_VN';
+
 
 const customTheme = {
   primaryColor: '#0866ff',
@@ -18,12 +17,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    {/* <ConfigProvider
-        locale={locale}
-        theme={customTheme}
-      > */}
       <App />
-    {/* </ConfigProvider> */}
   </React.StrictMode>
 );
 

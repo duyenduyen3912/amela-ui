@@ -18,11 +18,11 @@ export default function PageWrapper() {
   // if (!profile) return null;
   return (
     <div className={styles.pageWrapper}>
-      {/* <SideNav />
+      <SideNav />
       <div className={styles.mainWrapper}>
-        <PageHeader /> */}
+        <PageHeader />
         <div className={styles.pageContent}>{outlet}</div>
-      {/* </div> */}
+      </div>
     </div>
   );
 }

@@ -12,24 +12,6 @@
     box-sizing: border-box;
 }
 
-.img{
-    width: 28px;
-}
-
-.avatar{
-    width: 36px !important;
-    height: 36px !important;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.avatarContact{
-    position: relative;
-    width: 36px !important;
-    height: 36px !important;
-    border-radius: 50%;
-    object-fit: cover;
-}
 .friendContactWrapper > div:first-child{
     position: relative;
 }
@@ -46,10 +28,11 @@
     box-shadow: 0 0 0 2px white;
 }
 
-.group{
+.avatarContact{
+    position: relative;
     width: 36px !important;
     height: 36px !important;
-    border-radius: 8px;
+    border-radius: 50%;
     object-fit: cover;
 }
 
@@ -59,15 +42,4 @@
     margin: 0;
     font-size: 15px;
     font-weight: 600;
-}
-
-.iconWrap{
-    border-radius: 50%;
-    padding: 4px 8px;
-    background-color: #e7e7e7;
-}
-
-.icon{
-    font-size: 12px;
-    font-weight: 700
 }

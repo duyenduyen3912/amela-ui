@@ -1,0 +1,25 @@
+.wrapper{
+    cursor: pointer;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    border-radius: 6px;
+    &:hover{
+        background-color: #e7e7e7;
+        transition:  background-color ease 0.3s;
+    }
+    box-sizing: border-box;
+}
+
+.img{
+    width: 28px;
+}
+
+.name{
+    box-sizing: border-box;
+    padding: 8px 10px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+}

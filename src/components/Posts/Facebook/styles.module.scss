@@ -1,0 +1,125 @@
+.status{
+    margin: 20px 0 ;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid rgb(218, 225, 241);
+    box-shadow: 1px 2px 4px rgba(198, 201, 209, 0.3);
+    overflow: hidden;
+    .statusTop{
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 16px 10px;
+      .statusAuthor{
+        display: flex;
+    
+      }
+      .authorImg{
+        width: 40px !important;
+        height: 40px !important;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 1px solid var(--icon);
+      }
+      .authorWrap{
+        margin-left: 10px;
+        .authorName{
+          margin: 0;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 20px;
+        }
+        .postTime{
+          font-size: 14px;
+          color: var(--icon);
+          line-height: 20px;
+        }
+      }
+      .statusIcon{
+        font-size: 24px;
+        color: var(--icon);
+      }
+      .statusAction > span:first-child{
+        margin-right: 20px;
+      }
+    }
+    .content{
+      padding: 0 16px;
+      font-size: 15px;
+      line-height: 20px
+    }  
+    .contentImgWrap{
+      width: 100% ;
+      height: 500px;
+      object-fit: cover;
+    }
+    .contentImgWrap > div {
+      width: 100%;
+      height: 100% !important;
+    }
+    .contentImg{
+      width: 100%;
+      height: 100% !important;
+      object-fit: cover;
+    }
+    .statusReact{
+      margin: 0 16px;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--bg);
+      .reactImg{
+        width: 18px !important;
+        height: 18px !important;
+      }
+      .like{
+        display: flex;
+        align-items: center;
+      }
+      .count{
+        cursor: pointer;
+        margin-left: 8px;
+        color: var(--icon);
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    .actions{
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 12px;
+      padding: 4px 0;
+      .action{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        border-radius: 10px;
+        margin: 0 4px;
+        padding: 6px 0;
+        &:hover{
+          background-color: #e7e7e7;
+        }
+      }
+      .actionIcon{
+        width: 20px;
+        height: 20px;
+      }
+      .actionName{
+        color: var(--icon);
+        margin-left: 8px;
+        font-weight: 600;
+        transform: translateY(2px);
+      }
+    }
+    
+}
+
+.reactIconWrap{
+    height: 40px;
+    width: 340px;
+    display: flex;
+    border-radius: 50%;
+  }

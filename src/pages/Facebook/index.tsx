@@ -1,58 +1,145 @@
 import { Button, Col, Image, Input, Popover, Row, Tooltip } from 'antd'
 import Header from 'components/Header'
-import  { FriendContact, GroupCard, ItemCard, ProfileCard, ShowLess, ShowMore, } from 'components/ItemCard'
+import { ItemCard } from 'components/Cards/Facebook/ItemCard';
+import { ShowLess, ShowMore } from 'components/Cards/Facebook/Expand';
+import { FriendContact } from 'components/Cards/Facebook/FriendContact';
+import { ProfileCard } from 'components/Cards/Facebook/ProfileCard';
+import { GroupCard } from 'components/Cards/Facebook/GroupCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import {SmallDashOutlined} from "@ant-design/icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import profileImg from "assets/image/iu.png"
+import userGroupImg from "assets/image/user_group.png"
+import watchImg from "assets/image/watch.png"
+import savedImg from "assets/image/saved.png"
+import messImg from "assets/image/mess.png"
+import clockImg from "assets/image/clock.png"
+import donateImg from "assets/image/donate.png"
+import gameImg from "assets/image/game.png"
+import homeImg from "assets/image/home.png"
+import friendImg from "assets/image/friends.png"
+import groupImg from "assets/image/group.png"
+import groupImg1 from "assets/image/group1.png"
+import groupImg2 from "assets/image/group2.png"
+import groupImg3 from "assets/image/group3.jpg"
+import groupImg4 from "assets/image/group4.png"
+import groupImg5 from "assets/image/group5.png"
+import groupImg6 from "assets/image/group6.png"
+import livestreamImg from "assets/image/livestream.png"
+import imageIconImg from "assets/image/image.png"
+import emojiImg from "assets/image/emoji.png"
+import messiImg from "assets/image/messi.jpg"
+import jisooImg from "assets/image/jisoo.jpg"
+import lisaImg from "assets/image/lisa.jpg"
+import jennieImg from "assets/image/jennie.jpg"
+import chaeyoungImg from "assets/image/chaeyoung.jpg"
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import styles from "./styles.module.scss"
-import StoryCard from 'components/StoryCard';
+import StoryCard from 'components/Story/FacebookStory';
 import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import Post from 'components/Posts/Facebook';
 
-const content = (
-    <div className={styles.reactIconWrap}>
-         <Tooltip title="Thích">
-            <div className={styles.iconImgWrap} >
-                <Image src={require("../../assets/image/like_icon.png")} preview={false} className={styles.iconImg} />
-            </div>
-         </Tooltip>
-         <Tooltip title="Yêu thích">
-            <div className={styles.iconImgWrap} >
-                <Image src={require("../../assets/image/love.png")} preview={false} className={styles.iconImg} />
-            </div>
-         </Tooltip>
-         <Tooltip title="Thương thương">
-            <div className={styles.iconImgWrap} >
-                <Image src={require("../../assets/image/lovely.png")} preview={false} className={styles.iconImg} />
-            </div>
-         </Tooltip>
-         <Tooltip title="Haha">
-            <div className={styles.iconImgWrap} >
-                <Image src={require("../../assets/image/smile.png")} preview={false} className={styles.iconImg} />
-            </div>
-         </Tooltip>
-         <Tooltip title="Wow">
-            <div className={styles.iconImgWrap} >
-                <Image src={require("../../assets/image/wow.png")} preview={false} className={styles.iconImg} />
-            </div>
-         </Tooltip>
-         <Tooltip title="Buồn">
-            <div className={styles.iconImgWrap} >
-                <Image src={require("../../assets/image/sad.png")} preview={false} className={styles.iconImg} />
-            </div>
-         </Tooltip>
-         <Tooltip title="Phẫn nộ">
-            <div className={styles.iconImgWrap} >
-                <Image src={require("../../assets/image/angry.png")} preview={false} className={styles.iconImg} />
-            </div>
-         </Tooltip>
-    </div>
-);
+const itemObj = [
+    {
+        name: "Bạn bè",
+        img: userGroupImg,
+    },
+    {
+        name: "Video",
+        img: watchImg,
+    },
+    {
+        name: "Đã lưu",
+        img: savedImg,
+    },
+    {
+        name: "Messenger",
+        img: messImg,
+    },
+    {
+        name: "Kỉ niệm",
+        img: clockImg,
+    },
+    {
+        name: "Chiến dịch gây quỹ",
+        img: donateImg,
+    },
+    {
+        name: "Chơi game",
+        img: gameImg,
+    },
+    {
+        name: "Marketplace",
+        img: homeImg,
+    },
+    {
+        name: "Nhóm",
+        img: friendImg,
+    },
+]
+
+const groupObj = [
+    {
+        img: groupImg,
+        name: "Nhóm tìm và review anime siêu hay"
+    },
+    {
+        img: groupImg1,
+        name: "Hội những người yêu thích Doraemon"
+    },
+    {
+        img: groupImg2,
+        name: "Your name group fan"
+    },
+    {
+        img: groupImg3,
+        name: "Group này toàn Kẹo của Ngọt"
+    },
+    {
+        img: groupImg4,
+        name: "Cộng đồng Frontend Việt Nam"
+    },
+    {
+        img: groupImg5,
+        name: "ReactJS, React Native Việt Nam"
+    },
+    {
+        img: groupImg6,
+        name: "Nhóm tìm và review truyện ngôn tình"
+    },
+]
+
+const friendContactObj = [
+    {
+        img: profileImg,
+        name: "Lee Ji Eun",
+    },
+    {
+        img: messiImg,
+        name: "Messi",
+    },
+    {
+        img: jisooImg,
+        name: "Kim Jisoo",
+    },
+    {
+        img: lisaImg,
+        name: "Lisa",
+    },
+    {
+        img: jennieImg,
+        name: "Jennie Kim",
+    },
+    {
+        img: chaeyoungImg,
+        name: "Park Chaeyoung",
+    }
+]
 
 export default function Facebook() {
     const [isOpenOption, setIsOpenOption] = useState(false)
@@ -64,43 +151,51 @@ export default function Facebook() {
             <Col span={6} className='gutter-row' >
                 <div className={styles.colLeft}>
                     <div className={styles.navWrapper}>
-                    <ProfileCard img={require("../../assets/image/iu.png")} name ="Lee Ji Eun" />
-                    <ItemCard img={require("../../assets/image/user_group.png")} name ="Bạn bè" />
-                    <ItemCard img={require("../../assets/image/watch.png")} name ="Video" />
-                    <ItemCard img={require("../../assets/image/saved.png")} name ="Đã lưu" />
-                    <ItemCard img={require("../../assets/image/mess.png")} name ="Messenger" />
-                    {
-                        !isOpenOption && (<ShowMore onClick={setIsOpenOption}/>) 
-                    }
-                   
-                    {
-                        isOpenOption && (
-                            <div>
-                                <ItemCard img={require("../../assets/image/clock.png")} name ="Kỉ niệm" />
-                                <ItemCard img={require("../../assets/image/donate.png")} name ="Chiến dịch gây quỹ" />
-                                <ItemCard img={require("../../assets/image/game.png")} name ="Chơi game" />
-                                <ItemCard img={require("../../assets/image/home.png")} name ="Marketplace" />
-                                <ItemCard img={require("../../assets/image/friends.png")} name ="Nhóm" />
-                                <ShowLess onClick={setIsOpenOption}/>
-                            </div>
-                        )
-                    }
+                        <ProfileCard img={profileImg} name ="Lee Ji Eun" />
+                        <>
+                            {
+                                itemObj.slice(0, -5).map((item) => {
+                                    return <ItemCard img={item.img} name={item.name} />
+                                })
+                            }
+                            {
+                                !isOpenOption && (<ShowMore onClick={setIsOpenOption}/>) 
+                            }
+                        
+                            {
+                                isOpenOption && (
+                                    <div>
+                                        <>
+                                        {
+                                            itemObj.slice(-5).map((item) => {
+                                                return <ItemCard img={item.img} name={item.name} />
+                                            })
+                                        }
+                                        </>
+                                        <ShowLess onClick={setIsOpenOption}/>
+                                    </div>
+                                )
+                            }
+                        </>
                     </div>
                     <div className={styles.navWrapper}>
                         <p className={styles.title}>Lối tắt của bạn</p>
-                            <GroupCard img={require("../../assets/image/group.png")} name ="Nhóm tìm và review anime siêu hay" />
-                            <GroupCard img={require("../../assets/image/group1.png")} name ="Hội những người yêu thích Doraemon" />
-                            <GroupCard img={require("../../assets/image/group2.png")} name ="Your Name group Fan" />
-                            <GroupCard img={require("../../assets/image/group3.jpg")} name ="Group này toàn Kẹo của Ngọt" />
-                            <GroupCard img={require("../../assets/image/group4.png")} name ="Cộng đồng Frontend Việt Nam" />
+                            {
+                                groupObj.slice(0, -2).map((item) => {
+                                    return <GroupCard img={item.img} name={item.name} />
+                                })
+                            }
                             {
                                 !isOpenGroupOption && (<ShowMore onClick={setIsOpenGroupOption}/>) 
                             }
                             {
                                 isOpenGroupOption && (
                                     <div>
-                                        <GroupCard img={require("../../assets/image/group5.png")} name ="ReactJS, React Native Việt Nam" />
-                                        <GroupCard img={require("../../assets/image/group6.png")} name ="Nhóm tìm và review truyện ngôn tình" />
+                                        {
+                                             groupObj.slice(-2).map((item) => {
+                                                return <GroupCard img={item.img} name={item.name} />
+                                            })
+                                        }
                                         <ShowLess onClick={setIsOpenGroupOption}/>
                                     </div>
                                 )
@@ -129,88 +224,32 @@ export default function Facebook() {
                     <div className={styles.postWrap}>
                         <div className={styles.post}>
                             <div className={styles.postInput}>
-                                <Image src={require("../../assets/image/iu.png")} preview={false} className={styles.avatar} />
+                                <Image src={profileImg} preview={false} className={styles.avatar} />
                                 <Input placeholder='Bạn đang nghĩ gì thế?' className={styles.input}/>
                             </div>
                             <Row justify='space-between'  className={styles.postItemRow}>
                                 <Col span={8}>
                                     <div className={styles.postItem}>
-                                        <Image src={require("../../assets/image/livestream.png")} className={styles.postImg} preview={false}/>
+                                        <Image src={livestreamImg} className={styles.postImg} preview={false}/>
                                         <p className={styles.postName}>Phát trực tiếp</p>
                                     </div>
                                 </Col>
                                 <Col span={8}>
                                     <div className={styles.postItem}>
-                                        <Image src={require("../../assets/image/image.png")} className={styles.postImg} preview={false}/>
+                                        <Image src={imageIconImg} className={styles.postImg} preview={false}/>
                                         <p className={styles.postName}>Ảnh/video</p>
                                     </div>
                                 </Col>
                                 <Col span={8}>
                                     <div className={styles.postItem}>
-                                        <Image src={require("../../assets/image/emoji.png")} className={styles.postImg} preview={false}/>
+                                        <Image src={emojiImg} className={styles.postImg} preview={false}/>
                                         <p className={styles.postName}>Cảm xúc/hoạt động</p>
                                     </div>
                                 </Col>
                             </Row>
                         </div>
-                        {
-                            Array(10).fill(null).map(() => {
-                                return (
-                                    <div className={styles.status}>
-                                        <div className={styles.statusTop}>
-                                            <div className={styles.statusAuthor}>
-                                                <Image src={require("../../assets/image/iu.png")} preview={false} className={styles.authorImg} />
-                                                <div className={styles.authorWrap}>
-                                                    <p className={styles.authorName}>Lee Ji Eun</p>
-                                                    <div className={styles.postTime}>15 phút</div>
-                                                </div>
-                                            </div>
-                                            <div className={styles.statusAction}>
-                                                <SmallDashOutlined className={styles.statusIcon}/>
-                                                <FontAwesomeIcon icon={faXmark} className={styles.statusIcon}/>
-                                            </div>
-                                        </div>
-                                        <div >
-                                            <p className={styles.content}>Tiểu thuyết Khó dỗ dành của tác giả Trúc Dĩ đã được mua bản quyền và xuất bản vào tháng 12/2022</p>
-                                            <div className={styles.contentImgWrap}>
-                                                <Image src={require("../../assets/image/story.png")} preview={false} className={styles.contentImg}/>
-                                            </div>
-                                        </div>
-                                        <div className={styles.statusReact}>
-                                            <div className={styles.like}>
-                                                <span>
-                                                    <Image src={require("../../assets/image/like.png")} preview={false}  className={styles.reactImg} />
-                                                    <Image src={require("../../assets/image/haha.png")} preview={false}  className={styles.reactImg} />
-                                                </span>
-                                                <span className={styles.count}>857</span>
-                                            </div>
-                                            <div className={styles.comment}>
-                                                <span className={styles.count}>91 bình luận</span>
-                                                <span className={styles.count}>18 lượt chia sẻ</span>
-                                            </div>
-                                        </div>
-                                        <div className={styles.actions}>
-                                            <Popover content={content} className={styles.popoverIcon}>
-                                                <div className={styles.action}>
-                                                    <Image src={require("../../assets/image/action_like.png")} preview={false} className={styles.actionIcon}/>
-                                                    <span className={styles.actionName}>Thích</span>
-                                                </div>
-                                            </Popover>
-                                            <div className={styles.action}>
-                                                <Image src={require("../../assets/image/action_cmt.png")} preview={false} className={styles.actionIcon}/>
-                                                <span className={styles.actionName}>Bình luận</span>
-                                            </div>
-                                            <div className={styles.action}>
-                                                <Image src={require("../../assets/image/action_share.png")} preview={false} className={styles.actionIcon}/>
-                                                <span className={styles.actionName}>Chia sẻ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )
-                            }) 
-                        }
-                        
-                        
+                        <Post />
+                        <Post />
                     </div>
                     
                 </div>
@@ -223,7 +262,7 @@ export default function Facebook() {
                             <span className={styles.viewAll}>Xem tất cả</span>
                         </div>
                         <div className={styles.friendInfoWrap}>
-                            <Image src={require("../../assets/image/iu.png")} className={styles.friendImg} preview={false} />
+                            <Image src={profileImg} className={styles.friendImg} preview={false} />
                             <div className={styles.friendInfo}>
                                 <div>
                                     <span className={styles.friendName}>Lee Ji Eun</span>
@@ -249,12 +288,11 @@ export default function Facebook() {
                             </div>
                         </div>
                         <div className={styles.friendContact}>
-                            <FriendContact img={require("../../assets/image/iu.png")} name="Lee Ji Eun" />
-                            <FriendContact img={require("../../assets/image/messi.jpg")} name="Leo Messi" />
-                            <FriendContact img={require("../../assets/image/jisoo.jpg")} name="Kim Jisoo" />
-                            <FriendContact img={require("../../assets/image/lisa.jpg")} name="Lisa" />
-                            <FriendContact img={require("../../assets/image/jennie.jpg")} name="Jennie Kim" />
-                            <FriendContact img={require("../../assets/image/chaeyoung.jpg")} name="Park Chaeyoung" />
+                            {
+                                friendContactObj.map((item) => {
+                                    return <FriendContact img={item.img} name={item.name} />
+                                })
+                            }
                         </div>
                     </div>
                 </div>

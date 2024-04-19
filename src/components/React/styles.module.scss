@@ -1,0 +1,20 @@
+.iconImgWrap{
+    cursor: pointer;
+    width: 40px !important;
+    height: 40px !important;
+    margin: 0 4px;
+    
+}
+
+.iconImg{
+    object-fit: cover;
+    &:hover{
+        scale: 120%;
+        transform-origin: center;
+        transition: all ease 0.3s;
+    }
+    &:not(hover){
+        width: 100%;
+        transition: all ease 0.3s;
+    }
+}

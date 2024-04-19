@@ -1,0 +1,69 @@
+.wrapper{
+    display: flex;
+
+}
+
+.navWrap{
+    width: 335px;
+}
+
+.containerWrap{
+    width: calc(100% - 335px);
+    margin: 16px 0 0 0;
+}
+
+.container{
+    padding: 0 15px;
+}
+
+.swiper{
+    font-size: 20px;
+    padding: 8px 0;
+}
+
+.swiper > div:nth-child(2) {
+    width: 24px;
+    height: 24px;
+    padding: 0 10px 0 8px !important;
+}
+
+.swiper > div:nth-child(2)::after {
+    font-size: 12px !important;
+}
+
+.swiper > div:nth-child(3) {
+    width: 24px;
+    height: 24px;
+    padding: 0 8px 0 10px !important;
+}
+
+.swiper > div:nth-child(3)::after {
+    font-size: 12px !important;
+}
+
+.posts{
+    padding: 30px 12.857%;
+}
+.friends{
+    width: 86.74%;
+    margin-top: 10px;
+    padding-left: 64px;
+    .suggested{
+        margin: 10px 0 8px 0;
+        display: flex;
+        justify-content: space-between;
+        .title{
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--icon);
+        }
+        .action{
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+    }
+}
+
+
+

@@ -1,0 +1,30 @@
+.imgWrap{
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    padding: 2px;
+    box-sizing: border-box;
+    background-image: linear-gradient(to right, #405de6, #5b51d8, #833ab4, #c13584, #e1396c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
+}
+
+.imgWrap > div {
+   height: 100% !important;
+}
+
+.img{
+    width: 62px!important;
+    height: 62px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+
+.name{
+    text-align: center;
+    margin: 0;
+    font-size: 12px;
+    padding: 0 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
