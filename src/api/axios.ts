@@ -5,7 +5,7 @@ import { logout } from "utils/helper/authentication";
 
 const axiosInstance = Axios.create({
   timeout: 3 * 60 * 1000,
-  baseURL: configs.API_DOMAIN,
+  // baseURL: configs.API_DOMAIN,
 });
 
 axiosInstance.interceptors.request.use(

@@ -1,5 +1,6 @@
 import Facebook from "pages/Facebook";
 import Instagram from "pages/Instagram";
+import ReactQuery from "pages/ReactQuery";
 import Tasks from "pages/Tasks";
 import React, { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
@@ -16,6 +17,7 @@ export default function AppWrapper() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/facebook" element={<Facebook />} />
         <Route path="/instagram" element={<Instagram />} />
+        <Route path="/react-query" element={<ReactQuery/>} />
         <Route path="/" element={<AuthWrapper />}>
           <Route path="/tasks" element={<Tasks />} />
         </Route>
